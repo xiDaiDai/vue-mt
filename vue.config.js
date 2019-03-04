@@ -1,5 +1,5 @@
 const path = require('path')
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, dir)
 }
 module.exports = {
@@ -25,6 +25,13 @@ module.exports = {
       // 给 less-loader 传递选项
       less: {
         javascriptEnabled: true
+      },
+      postcss: {
+        plugins: [
+          require('postcss-px2rem')({
+            remUnit: 37.5
+          })
+        ]
       }
     }
   },
@@ -39,12 +46,10 @@ module.exports = {
   },
 
   // 通过 webpack-merge 合并到最终的配置中
-  configureWebpack: {
-
-  }
+  configureWebpack: {}
 }
 
-function addStyleResource (rule) {
+function addStyleResource(rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')
     .options({
