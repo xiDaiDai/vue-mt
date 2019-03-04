@@ -1,5 +1,5 @@
 const path = require('path')
-function resolve(dir) {
+function resolve (dir) {
   return path.join(__dirname, dir)
 }
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
   configureWebpack: {}
 }
 
-function addStyleResource(rule) {
+function addStyleResource (rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')
     .options({

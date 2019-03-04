@@ -1,9 +1,7 @@
 <template>
-  <div class="home">
-    <vheader title="首页"></vheader>
+  <div class="about">
     <div>
-      <vcate></vcate>
-      <shoplist></shoplist>
+      orders
     </div>
     <vfooter></vfooter>
   </div>
@@ -11,21 +9,17 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-// @ is an alias to /src
 import vfooter from '@/components/footer/vfooter.vue'
-import vheader from '@/components/header/header.vue'
-import vcate from '@/components/home/cate-item.vue'
-import shoplist from '@/components/home/msite.vue'
+
+// @ is an alias to /src
 export default {
-  name: 'header',
+  name: 'about',
   data () {
-    return {}
+    return {
+    }
   },
   components: {
-    vheader,
-    vfooter,
-    vcate,
-    shoplist
+    vfooter
   },
   computed: {
     ...mapState({
@@ -36,11 +30,21 @@ export default {
     })
   },
   methods: {
-    requestInfo () {
-      this.$store.dispatch('home/getInfo')
+    changeInfo () {
+      this.$store.dispatch('home/changeInfo', { firstName: '22222', lastName: '333' })
     }
   },
   created () {
+    console.log('----- create ------')
+  },
+  mounted () {
+    console.log('----- mounted ------')
+  },
+  updated () {
+    console.log('----- updated ------')
+  },
+  destroyed () {
+    console.log('----- destroyed ------')
   }
 }
 </script>

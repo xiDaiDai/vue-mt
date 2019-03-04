@@ -20,13 +20,11 @@ export default {
     height: 45px;
     font-size: 14px;
     background-color: #1C1B20;
-    border-bottom: 1px solid #eaeaea;
     color: #fff;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center
-
   }
 
 </style>
