@@ -1,7 +1,10 @@
 <template>
-  <div class="about">
-    <div>
-      orders
+  <div class="orders">
+    <vheader title="订单"></vheader>
+    <div class="orders-content">
+      <div  v-for="order in orders">
+        <div class="order-item">{{order}}</div>
+      </div>
     </div>
     <vfooter></vfooter>
   </div>
@@ -9,17 +12,20 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import vfooter from '@/components/footer/vfooter.vue'
+import vfooter from '@/components/footer/footer.vue'
+import vheader from '@/components/header/header.vue'
 
 // @ is an alias to /src
 export default {
-  name: 'about',
+  name: 'orderlist',
   data () {
     return {
+      orders:[0,1,2,3,4,5,6,7,8,9]
     }
   },
   components: {
-    vfooter
+    vfooter,
+    vheader
   },
   computed: {
     ...mapState({
@@ -48,3 +54,11 @@ export default {
   }
 }
 </script>
+<style>
+  .orders-content {
+    margin-bottom:50px;
+  }
+  .order-item{
+    padding: 50px;
+  }
+</style>

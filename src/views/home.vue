@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <vheader title="首页"></vheader>
-    <div>
+    <vheader title="首页" :headerFixed=true ></vheader>
+    <div class="home-content">
       <vcate></vcate>
       <shoplist></shoplist>
     </div>
@@ -12,7 +12,7 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 // @ is an alias to /src
-import vfooter from '@/components/footer/vfooter.vue'
+import vfooter from '@/components/footer/footer.vue'
 import vheader from '@/components/header/header.vue'
 import vcate from '@/components/home/cate-item.vue'
 import shoplist from '@/components/home/msite.vue'
@@ -44,3 +44,8 @@ export default {
   }
 }
 </script>
+<style scoped lang="less">
+  .home-content {
+    margin-top:45px;
+  }
+</style>

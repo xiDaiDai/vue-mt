@@ -1,7 +1,6 @@
 <template>
-  <div class="header-container">
+  <div class="header-container" v-bind:class="{headerFixed:headerFixed}">
     {{title}}
-
   </div>
 </template>
 
@@ -9,7 +8,11 @@
 export default {
   name: 'vfooter',
   props: {
-    title: String
+    title: String,
+    headerFixed: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>
@@ -25,6 +28,13 @@ export default {
     justify-content: center;
     align-content: center;
     align-items: center
+  }
+
+  .headerFixed {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
   }
 
 </style>
