@@ -27,6 +27,11 @@ export default new Router({
       path: '/my',
       name: 'my',
       component: () => import('./views/my.vue')
+    },
+    {
+      path: '/pano',
+      name: 'pano',
+      component: () => import('./views/pano.vue')
     }
   ]
 })
