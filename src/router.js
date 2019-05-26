@@ -32,6 +32,11 @@ export default new Router({
       path: '/pano',
       name: 'pano',
       component: () => import('./views/pano.vue')
+    },
+    {
+      path: '/phonepano',
+      name: 'phonepano',
+      component: () => import('./views/phonepano.vue')
     }
   ]
 })

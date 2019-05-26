@@ -10,6 +10,9 @@
       <router-link :to="{ name: 'pano', params:{ imgName: 'room3' }}">
         <div class="cate-name">room3</div>
       </router-link>
+      <router-link :to="{ name: 'phonepano', params:{ imgName: 'room3' }}">
+        <div class="cate-name">room4mobile</div>
+      </router-link>
 
     </div>
     <vfooter></vfooter>
