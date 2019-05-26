@@ -45,11 +45,11 @@
         sprite: 'icon', // label,icon
         onClick: this.onClick,
       }
-      tp = new tpanorama(opt)
+       new tpanorama(opt)
     },
 
     beforeDestroy(){
-      tp = null;
+
     }
   }
 </script>
