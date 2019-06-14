@@ -4,6 +4,7 @@ import router from './router'
 import store from './store/index'
 import './filters/index'
 import 'lib-flexible'
+import './registerServiceWorker'
 
 Vue.config.productionTip = false
 

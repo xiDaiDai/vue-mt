@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link href="./jslib/vr/photo-sphere-viewer.css">
+    <!-- CODELAB: Add link rel manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <!-- CODELAB: Add link rel manifest -->
+    <meta name="description" content="A sample weather app">
+    <meta name="theme-color" content="#2F3BA2" />
     <title>vuex-mt</title>
   </head>
   <body>
@@ -14,7 +20,22 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-  <script src="./jslib/three.min.js"></script>
-  <script src="./jslib/photo-sphere-viewer.js"></script>
+  <!--<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>-->
+  <!--<script src="./jslib/vr/three.js"></script>-->
+  <!--<script src="./jslib/vr/uevent.min.js"></script>-->
+  <!--<script src="./jslib/vr/doT.js"></script>-->
+  <!--<script src="./jslib/vr/DeviceOrientationControls.js"></script>-->
+  <!--<script src="./jslib/vr/photo-sphere-viewer.js"></script>-->
+  <script>
+      // CODELAB: Register service worker.
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('./service-worker.js')
+                  .then((reg) => {
+                      console.log('Service worker registered.', reg);
+                  });
+          });
+      }
+  </script>
+
 </html>
